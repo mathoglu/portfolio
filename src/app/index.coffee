@@ -7,10 +7,12 @@ $(document).ready ->
   $pageContainer = $('.page-container')
   $posts = $pageContainer.find('.post')
   $menu = $('.menu')
+  $('body').addClass('go')
   currentPosition = 0
 
   # Helpers
   deActivateFilters = -> $filters.each( -> $(this).removeClass('active') )
+
 
   ###
     Section class

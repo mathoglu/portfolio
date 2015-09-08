@@ -10,6 +10,13 @@ body {
 	font-family: 'Quicksand', sans-serif;
 }
 
+body.go {
+  .text-content, .me, .menu {
+	opacity: 1 !important;
+	transition: opacity 1s ease-in;
+  }
+}
+
 h1 {
 	font-size: 1.5em;
 }
@@ -18,7 +25,7 @@ body.menu-active {
   .wrapper {
 	transform: translateX(-$side-menu-width);
 	transition: transform 200ms ease-in-out;
-	box-shadow: 5px 0px 20px -3px rgba(0, 0, 0, 0.1);
+	@include box-depth(5);
   }
 
   .menu {
@@ -58,15 +65,17 @@ body.menu-active {
 	  height: $menu-height + 2em;
 	  padding: 1rem 0.5rem;
 	  line-height: $menu-height;
+	  background-color: rgba(0, 0, 0, 0.2);
+	  @include box-depth(1);
 
 	  a.icon-link {
 		display: inline-block;
 		font-size: 2.2em;
 		padding: 0 1.4rem;
-		color: #000;
+		color: #fff;
 
 		&:hover {
-		  color: $dark-gray;
+		  color: #000;
 		}
 	  }
 	}
@@ -78,13 +87,15 @@ body.menu-active {
 		padding: 0;
 
 		li {
+		  	$caret-size: 8px;
+
 			width: 100%;
 
 			a.side-menu-link {
 				font-size: 1.5em;
 				text-decoration: none;
 				cursor: pointer;
-			  	color: #000;
+			  	color: $dark-gray;
 			  	width: 100%;
 				display: inline-block;
 			  	padding: .5rem 2rem;
@@ -102,8 +113,7 @@ body.menu-active {
 					position: absolute;
 					left: 1rem;
 					top: 50%;
-					$caret-size: 10px;
-					color: $dark-gray;
+					color: #000;
 					width: 0;
 					height: 0;
 					border-top: $caret-size solid transparent;
@@ -116,7 +126,11 @@ body.menu-active {
 
 			&:hover {
 			  a.side-menu-link {
-				color: $dark-gray;
+				color: #000;
+
+				&.active:before {
+				  border-left: $caret-size solid #000;
+				}
 			  }
 			}
 
@@ -136,6 +150,8 @@ body.menu-active {
 	color: white;
 	background-color: rgba(0,0,0,0.2);
 	text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  	opacity: 0;
+  	@include box-depth(1);
 
 	&.scroll {
 		color: #000;
@@ -254,6 +270,7 @@ body.menu-active {
 		  border-radius: 40rem;
 		  box-shadow: 0px 0 76px rgba(0, 0, 0, 0.5);
 		  font-size: 1.6em;
+		  opacity: 0;
 		}
 
 	  &.hide {
