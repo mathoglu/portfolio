@@ -1,0 +1,20 @@
+{
+  "name": "mafffs",
+  "version": "0.0.1",
+  "authors": [
+    "Matts Höglund"
+  ],
+  "description": "Matts Höglunds portfolio",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "foundation": "~5.5.2",
+    "jquery": "~2.1.4"
+  }
+}

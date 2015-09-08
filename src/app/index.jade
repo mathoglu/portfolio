@@ -1,0 +1,115 @@
+extends layout
+
+block content
+
+    .menu
+        .menu-bar
+            span.right.icon
+                i.fa.fa-bars
+            | &#x9;&#x9;&#x9;&#x9;
+            span.logo
+                h1 Matts H&ouml;glund
+            span.center
+                #my-work-menu.part-menu.hide
+                    h2 My Work
+                    span.filter(data-target="web") Web
+                    span.filter(data-target="audio") Audio
+                    span.filter(data-target="other") Other
+                    span.filter.active(data-target="all") All
+                .part-menu.hide
+                    h2 More
+    | &#x9;&#x9;
+    .side-menu
+        .top-links
+            a.icon-link(href="https://se.linkedin.com/in/mattshoglund" target="_blank")
+                i.fa.fa-linkedin-square
+            a.icon-link(href="https://github.com/mathoglu" target="_blank")
+                i.fa.fa-github-square
+            a.icon-link(href="https://instagram.com/mafffs/" target="_blank")
+                i.fa.fa-instagram
+            a.icon-link(href="https://www.youtube.com/user/mathoglu" target="_blank")
+                i.fa.fa-youtube
+        ul.no-style
+            li
+                a.side-menu-link.internal(href='#home') Home
+            | &#x9;&#x9;&#x9;&#x9;
+            li
+                a.side-menu-link.internal(href='#about') About
+            | &#x9;&#x9;&#x9;&#x9;
+            li
+                a.side-menu-link.internal(href='#my-work') My work
+            | &#x9;&#x9;&#x9;&#x9;
+            li
+                a.side-menu-link.internal(href='#contact') Contact
+            | &#x9;&#x9;&#x9;&#x9;
+            li
+                a.side-menu-link.internal(href='#cv') Curriculum Vitae
+            | &#x9;&#x9;&#x9;&#x9;
+    | &#x9;&#x9;
+    .wrapper
+        #home.image-container
+            .color-overlay
+            img(src='assets/images/01889_Koivumetsa-2-min.jpeg')
+            | &#x9;&#x9;&#x9;
+            .image-overlay
+                .row
+                    .column.small-12.text-content
+                        | &quot; Hey, I am a full-stack developer focusing on modern technologies and user-driven design. &quot;
+        | &#x9;&#x9;
+        .page-container
+            #about.info-post
+                .row
+                    .column.small-12.center
+                        span.me.rounded
+                .row
+                    .column.small-12
+                        h2 About
+                .row
+                    .column.small-12.description
+                        span.italic Sed in diam vestibulum, bibendum dolor vitae, auctor sem. Aenean ligula diam, dignissim sed accumsan in, pharetra sollicitudin arcu. Aliquam eu rhoncus lectus, eu ornare tortor. Suspendisse vitae egestas mauris, eget iaculis velit.
+                .row
+                    .column.small-12.medium-6
+                        div.info
+                            span.info-row
+                                strong Name:
+                                span Matts Höglund
+                            span.info-row
+                                strong Born:
+                                span September 1988, Vasa, Finland
+                            span.info-row
+                                strong Languages:
+                                span Swedish, English, Finnish, German, French
+                            span.info-row
+                                strong Studied:
+                                span Media Technology at RIT (Bsc), Machine Learning at TU Berlin, Audio Technology at RIT (Msc)
+
+                    .column.small-12.medium-6
+                        div.info
+                            span.info-row
+                                strong Interests:
+                                span Audio, Web&nbsp;Development, Music, Cooking, Traveling, Sports
+
+            | &#x9;&#x9;&#x9;
+            #my-work.posts-container(style="width: calc(100vw * #{posts.length});")
+                include posts
+
+            #contact.info-post
+                .content
+                    .row
+                        .column.small-12
+                            h3 Contact
+                    .row
+                        .column.small-12.medium-4.center
+                            strong Phone:
+                            span 56789098765
+                        .column.small-12.medium-4.center
+                            strong E-mail:
+                            span matts@hoglund.com
+                        .column.small-12.medium-4.center
+                            strong Other:
+                            span lolololol
+        | &#x9;&#x9;
+    //footer.hidden
+    //    .row
+    //        .column.small-12
+    //            | hejhej lorem ipsum

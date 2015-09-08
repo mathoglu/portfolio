@@ -1,0 +1,80 @@
+.project {
+
+	padding: 2rem 0rem;
+  	position: relative;
+  	cursor: pointer;
+
+	&:hover {
+
+	  opacity: 1 !important;
+
+	  .content {
+		opacity: 1;
+		transition: opacity 800ms ease-in-out;
+	  }
+	  
+	  .image-wrapper .image {
+		opacity: 1;
+		transition: all 300ms ease-in-out;
+	  }
+	}
+
+	span {
+		display: inline-block;
+	}
+
+  	.content {
+	  z-index: 10;
+	  margin-top: 20vh;
+	  color: white;
+	  opacity: 0;
+	  text-align: center;
+	}
+
+
+	.image-wrapper {
+
+		padding: 0;
+		text-align: center;
+	  	position: absolute;
+	  	top: 0;
+	  	left: 0;
+	  	width: 100%;
+
+		.image {
+			display: inline-block;
+			width: 100%;
+		  	height: 100vh;
+		  	background-size: cover;
+		  	background-position: center;
+			z-index: 1;
+			overflow: hidden;
+		  	opacity: 0.5;
+		  
+		  	&:after {
+			  content: "";
+			  position: absolute;
+			  width: 100%;
+			  height: 100%;
+			  top: 0;
+			  left: 0;
+			  background-color: rgba(0, 0, 0, 0.65);
+			}
+		}
+	}
+
+	.heading {
+
+		h4 {
+			font-size: 1.4em;
+		}
+	}
+
+	.description {
+		margin-bottom: 2rem;
+	}
+
+	.tags, .link {
+		width: 100%;
+	}
+}
