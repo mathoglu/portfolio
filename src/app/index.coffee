@@ -108,7 +108,7 @@ $(document).ready ->
 
       $(window).load @_setup
 
-      @_listen()
+      interval = @_sampler(20)
 
     getPosition: => (currentPosition = @$el.scrollTop()+@offset)
 
@@ -130,15 +130,12 @@ $(document).ready ->
       for border in @borders
         return border if pos < border.offset.bottom and pos >= border.offset.top
 
-    _listen: =>
-      @$el.on 'scroll', =>
-
+    _sampler: (freq)=>
+      handler = =>
         pos = @getPosition()
         @_setCurrent(pos)
 
-
         if @sections.home.is('past')
-
           if @sections['my-work'].is('active')
             @$other.myWorkMenu.removeClass('hide')
           else
@@ -151,7 +148,9 @@ $(document).ready ->
           #$imageOverlay.removeClass('hide')
           @$other.menu.removeClass('scroll')
           @$other.footer.addClass('hidden')
-      return
+        return
+
+      setInterval handler, freq
 
     _setCurrent: (pos)=>
       if pos > @_current?.offset.bottom
